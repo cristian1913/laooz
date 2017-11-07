@@ -1,0 +1,55 @@
+* {
+	padding: 0px;
+	margin: 0px;
+}
+
+.menu {
+	float: right;
+	margin: 30px;
+	width: 65%;
+	font-family: 'Raleway', sans-serif; 
+	text-transform: uppercase;
+	font-weight: 500;
+
+}
+
+.menu li {
+}
+
+ul, ol {
+	list-style: none;
+}
+
+.nav li a {
+	color: #fff;
+	text-decoration: none;
+	padding: 10px 25px;
+	display: block;
+	
+}
+
+.nav li:hover {
+	background:#000;
+	transition: 0.5s;
+	color: #a3d600;
+}
+
+.nav > li {
+	float: left;
+}
+
+.nav li ul {
+	display:none;
+	position: absolute;
+	min-width: 140px;
+}
+
+.nav li:hover > ul {
+	display: block;
+	background: rgba(0,0,0,0.4);
+	content: #a3d600;
+}
+
+.nav li ul li {
+	position: relative;
+}

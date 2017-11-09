@@ -396,5 +396,11 @@ box-shadow: 0px 10px 13px -8px rgba(130,130,130,1);
 	float: right;
 	background: red;
 	margin: 200px 100px 25px 25px;
+}
 
+.conoce span {
+	font-size: 40px;
+	height: 200px;
+	float: right;
+	background: red;
 }

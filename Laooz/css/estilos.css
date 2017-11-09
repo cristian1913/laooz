@@ -203,7 +203,7 @@ p {
 
 .hero {
   position: relative;
-  background: url(http://www.philippefercha.com/cd/toggle-menu-bg.jpg) no-repeat center center fixed;
+	background-image:url('../imagenes/headerfondo.png');
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;

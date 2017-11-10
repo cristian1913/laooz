@@ -507,6 +507,11 @@ section.client {
 section.client .section-title {
 	margin-bottom: 6em;
 }
+
+.carousel-client .slide img {
+	width: 150px;
+}
+
 .bx-controls {
 	position: relative;
 }

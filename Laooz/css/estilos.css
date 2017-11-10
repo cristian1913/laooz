@@ -392,17 +392,20 @@ box-shadow: 0px 10px 13px -8px rgba(130,130,130,1);
 	width: 25%;
 	height: 200px;
 	float: right;
-	background: red;
+	background:;
 	margin: 200px 100px 25px 25px;
+	-webkit-box-shadow: 2px 3px 14px 3px rgba(130,130,130,0.75);
+-moz-box-shadow: 2px 3px 14px 3px rgba(130,130,130,0.75);
+box-shadow: 2px 3px 14px 3px rgba(130,130,130,0.75);
 }
 
 .conoce span {
+	background: #fff;
 	font-size: 40px;
 	height: 200px;
 	float: right;
 	background: red;
 }
-<<<<<<< HEAD
 
 .colaborar {
 	width: 100%;
@@ -526,6 +529,7 @@ section.client .section-title {
     -webkit-border-radius: 5px;
     border-radius: 5px;
 }
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 4864ca8... index
 =======
@@ -534,3 +538,5 @@ section.client .section-title {
 >>>>>>> parent of 0c8b75c... slider clientes
 =======
 >>>>>>> parent of 0c8b75c... slider clientes
+=======
+>>>>>>> parent of b083f80... Revert "index"

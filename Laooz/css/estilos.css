@@ -556,6 +556,7 @@ body {
 .footer {
   margin: 30px 0px;
   text-align: center;
+	overflow: hidden;
 }
 
 .social {
@@ -661,4 +662,45 @@ body {
     rgb(236, 236, 236) 18px 18px,
     rgb(237, 237, 237) 19px 19px,
     rgb(238, 238, 238) 20px 20px;
+}
+
+.empleados {
+	background: #fff;
+	width: 100%;
+	overflow: hidden;
+	padding: 50px 0px 70px 0px;
+}
+
+.contenidoem {
+	width: 1100px;
+	margin: auto;
+}
+
+.contenidoem h2 {
+	font-size: 40px;
+	font-weight: 400;
+	text-align: center;
+	color: #333;
+	padding-bottom: 50px;
+}
+
+.temaimagen {
+	width: 25%;
+	float: left;
+	text-align: center;
+}
+
+.temaimagen img {
+	width: 250px;
+	height: 250px;
+	border-radius: 50%;
+	border: 3px solid #fff;
+	-webkit-box-shadow: 0px 1px 13px 0px rgba(133,133,133,1);
+-moz-box-shadow: 0px 1px 13px 0px rgba(133,133,133,1);
+box-shadow: 0px 1px 13px 0px rgba(133,133,133,1);
+}
+
+.temaimagen img:hover {
+	border-radius: 0px;
+	transition: 0.8s;
 }

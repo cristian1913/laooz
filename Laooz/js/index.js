@@ -34,3 +34,14 @@ $('nav a').click(function(event) {
     }, 500);
     event.preventDefault();
 });
+
+/**********************/
+/*	Client carousel   */
+/**********************/
+$('.carousel-client').bxSlider({
+  auto: true,
+    slideWidth: 234,
+    minSlides: 2,
+    maxSlides: 5,
+    controls: false
+});

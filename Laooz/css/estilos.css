@@ -270,6 +270,7 @@ box-shadow: 0px 7px 15px -4px rgba(168,166,168,1);
 
 .quienessomos {
 	width: 100%;
+	background: #fff;
 	overflow: hidden;
 	padding-bottom: 50px;
 	border-bottom: 1px solid rgba(0,0,0,0.2)
@@ -323,6 +324,7 @@ box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
 .grid {
 	width: 100%;
 	overflow: hidden;
+	background: #fff;
 }
 
 .contenidogrid {
@@ -411,7 +413,8 @@ box-shadow: 2px 3px 14px 3px rgba(130,130,130,0.75);
 .colaborar {
 	width: 100%;
 	overflow: hidden;
-	height: 830px;
+	height: 758px;
+	background: #fff;
 }
 
 .contenidocol {
@@ -702,5 +705,16 @@ box-shadow: 0px 1px 13px 0px rgba(133,133,133,1);
 
 .temaimagen img:hover {
 	border-radius: 0px;
-	transition: 0.8s;
+	transition: 0.9s;
+}
+
+.temaimagen h4 {
+	font-size: 25px;
+	font-weight: 400;
+	padding: 15px 0px 0px 0px;
+}
+
+.temaimagen h5 {
+	font-size: 15px;
+
 }

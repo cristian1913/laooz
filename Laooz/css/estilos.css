@@ -295,6 +295,7 @@ box-shadow: 0px 7px 15px -4px rgba(168,166,168,1);
 .texto p {
 	width: 80%;
 	color: #666;
+	line-height: 25px;
 }
 
 .imagencorp {
@@ -476,7 +477,7 @@ box-shadow: 2px 3px 14px 3px rgba(130,130,130,0.75);
     font-size: 25px;
     font-weight: 600;
     text-transform: uppercase;
-    padding-bottom: 10px;
+    padding-bottom:2	0px;
     color: #000;
     letter-spacing: 0.3px;
     padding: 0;
@@ -484,7 +485,7 @@ box-shadow: 2px 3px 14px 3px rgba(130,130,130,0.75);
 .section-title::after {
     content: "";
     height: 3px;
-    background: #fbb900;
+    background: #a3d600;
     width: 80px;
     position: absolute;
     left: 0;

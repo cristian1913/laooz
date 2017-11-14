@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Alimentos Nebraska</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<div class="contenedorglobal">
+<header>
+  <div class="contensito">
+    <div class="logo">
+      <p><span class="ion-ios-telephone"></span> 493 43 64 (Medellín) - 556 35 33 (Planta La Unión)</p>
+    </div>
+    <div class="menuescri">
+      <li><a href="#">Contacto</a></li>
+      <li><a href="#">Recetas</a></li>
+      <li><a href="#">Nuestros Clientes</a></li>
+      <li><a href="#">Quiénes Somos</a></li>
+      <li><a href="#">Productos</a></li>
+    </div>
+  </div>
+</header>
+
+<div class="coverquienessomos">
+  <img src="logo2.png" alt="">
+  <!--<h3></h3>-->
+  <h1>Contáctenos</h1>
+</div>
+
+
+
+<footer>
+  <div class="contenedorfoot">
+    <div class="grid">
+      <h1>Contacto</h1>
+      <li><span class="ion-android-call"></span> 493 43 64 (Medellín)</li>
+      <li><span class="ion-android-call"></span> 556 35 33 (Planta - La Unión, Ant)</li>
+      <li><span class="ion-ios-location"></span> Calle 42 N. 101-54 Oficina 10</li>
+      <li><span class="ion-ios-at"></span> nebraskaventas@une.net.co</li>
+    </div>
+    <div class="grid">
+      <h1>Secciones</h1>
+      <li><span class="ion-flash"></span> Productos</li>
+      <li><span class="ion-flash"></span> Quiénes Somos</li>
+      <li><span class="ion-flash"></span> Clientes</li>
+      <li><span class="ion-flash"></span> Recetas</li>
+    </div>
+    <div class="grid">
+      <span class="ion-quote"></span>
+      <p>Somos una empresa productora y comercializadora de dulces de leche y frutas; hacemos uso de la tecnología y gestión de la calidad en nuestros procesos, cuidando al medio ambiente y la salud de los consumidores.</p>
+      <span class="ion-quote"></span>
+    </div>
+  </div>
+</footer>
+<div class="redesyfirmalaooz">
+  <div class="contenedortotalfirma">
+  <div class="laooz">
+    <a href="#">Desarrollado por Laooz Studios</a>
+  </div>
+  <div class="redessocialesfo">
+    <li><span class="ion-social-twitter"></span></li>
+    <li><span class="ion-social-instagram"></span></li>
+    <li><span class="ion-social-facebook"></span></li>
+    <li><span class="ion-social-youtube"></span></li>
+  </div>
+  </div>
+</div>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+
+<script type="text/javascript">
+// need to implement drag functionality between slides.
+
+$(function(){
+
+  const $sliderWrapper = $('.slider');
+  const $sliderNav = $('.slider__navigation');
+  const slidesCount = $sliderWrapper.children('li').length;
+  const autoPlayDelay = 4000;
+  const transitionEndProps = 'webkitTransitionEnd otransitionend oTransitionEnd';
+  let visibleSlideIndex = 0;
+  let autoPlayId;
+
+  if ($sliderWrapper.length) {
+
+    // autoplay the slider
+    autoPlaySetup();
+
+    // change slide on navigation click
+    $sliderNav.on('click', 'li', function(e){
+      e.preventDefault();
+      const selectedItem = $(this);
+
+      if (!selectedItem.hasClass('selected')) {
+        let selectedPosition = selectedItem.index();
+        let activePosition = $sliderWrapper.find('li.selected').index();
+
+        if (activePosition < selectedPosition) {
+          nextSlide($sliderWrapper.find('.selected'), selectedPosition);
+        } else {
+          prevSlide($sliderWrapper.find('.selected'), selectedPosition);
+        }
+
+        //update autoplay visibleSlideIndex and nav;
+        visibleSlideIndex = selectedPosition;
+        updateNav(selectedPosition);
+        // reset autoplay
+        autoPlaySetup();
+      }
+    })
+
+    // Update navigation classes.
+    function updateNav(selectedPos) {
+      $sliderNav.find('.selected').removeClass('selected');
+      $sliderNav.find('li').eq(selectedPos).addClass('selected');
+    }
+
+    function prevSlide(visibleSlide, i) {
+      visibleSlide.removeClass('selected from-left from-right').addClass('is-moving').one(transitionEndProps, function(e) {
+          visibleSlide.removeClass('is-moving');
+      });
+
+      $sliderWrapper.children('li').eq(i).addClass('selected from-left').removeClass('move-left').nextAll().removeClass('move-left');
+    }
+
+    function nextSlide(visibleSlide, i) {
+      visibleSlide.removeClass('selected from-left from-right').addClass('is-moving').one(transitionEndProps , function(e) {
+          visibleSlide.removeClass('is-moving');
+      });
+
+      $sliderWrapper.children('li').eq(i).addClass('selected from-right').prevAll().addClass('move-left');
+    }
+
+    function autoPlaySetup() {
+      if ($sliderWrapper.hasClass('autoplay')) {
+        clearInterval(autoPlayId);
+        autoPlayId = window.setInterval(function(){
+          playSlides();
+        }, autoPlayDelay);
+      }
+    }
+
+    function playSlides() {
+      if (visibleSlideIndex < slidesCount - 1) {
+        nextSlide($sliderWrapper.find('.selected'), visibleSlideIndex +1);
+        visibleSlideIndex +=1;
+      } else {
+        prevSlide($sliderWrapper.find('.selected'), 0);
+        visibleSlideIndex = 0;
+      }
+
+      updateNav(visibleSlideIndex);
+    }
+
+  }
+
+});
+</script>
+</body>
+</html>

@@ -291,6 +291,7 @@ box-shadow: 0px 7px 15px -4px rgba(168,166,168,1);
 	font-size: 30px;
 	margin: 50px 0px 30px 0px;
 	color: #444;
+	font-weight: 300;
 }
 
 .texto p {
@@ -438,19 +439,18 @@ box-shadow: 2px 3px 14px 3px rgba(130,130,130,0.75);
 	text-align:center;
 	font-family: 'Raleway', sans-serif;
 	font-size: 30px;
-	padding-bottom: 20px;
+	padding-bottom: 10px;
 	color: #333;
 	font-weight: 500;
 	text-transform: uppercase;
 }
 
-.contenidocol h3 {
+.contenidocol p {
 	text-align:center;
 	font-family: 'Raleway', sans-serif;
-	font-size: 14px;
-	padding-bottom: 50px;
-	color: #000;
-	font-weight: 300;
+	font-size: 16px;
+	padding-bottom: 30px;
+	color: #666;
 }
 
 .cold {
@@ -476,6 +476,9 @@ box-shadow: 2px 3px 14px 3px rgba(130,130,130,0.75);
 	font-weight: 500;
 }
 
+.container {
+	padding-top: 20px;
+}
 
 .section-title h2 {
     text-align: center;
@@ -487,6 +490,13 @@ box-shadow: 2px 3px 14px 3px rgba(130,130,130,0.75);
     letter-spacing: 0.1px;
     padding: 0;
 }
+
+.section-title p {
+	text-align: center;
+	color: #777;
+	font-size: 16px;
+}
+
 .section-title::after {
     content: "";
     height: 3px;
@@ -678,7 +688,7 @@ body {
 	background: #fff;
 	width: 100%;
 	overflow: hidden;
-	padding: 50px 0px 70px 0px;
+	padding: 80px 0px 70px 0px;
 	border-bottom: 1px solid #bebebe;
 }
 
@@ -689,7 +699,7 @@ body {
 
 .contenidoem h2 {
 	font-size: 40px;
-	font-weight: 400;
+	font-weight: 300;
 	text-align: center;
 	color: #333;
 	padding-bottom: 50px;

@@ -440,6 +440,8 @@ box-shadow: 2px 3px 14px 3px rgba(130,130,130,0.75);
 	font-size: 30px;
 	padding-bottom: 20px;
 	color: #333;
+	font-weight: 500;
+	text-transform: uppercase;
 }
 
 .contenidocol h3 {
@@ -613,7 +615,7 @@ body {
 }
 
 .ion-email:hover {
-  color: #f55;
+	color: #a3d600;
   cursor: pointer;
 }
 

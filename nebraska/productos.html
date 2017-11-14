@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Productos | Alimentos Nebraska</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<div class="contenedorglobal">
+<header>
+  <div class="contensito">
+    <div class="logo">
+      <p><span class="ion-ios-telephone"></span> 493 43 64 (Medellín) - 556 35 33 (Planta La Unión)</p>
+    </div>
+    <div class="menuescri">
+      <li><a href="#">Contacto</a></li>
+      <li><a href="#">Recetas</a></li>
+      <li><a href="#">Nuestros Clientes</a></li>
+      <li><a href="#">Quiénes Somos</a></li>
+      <li><a href="#">Productos</a></li>
+    </div>
+  </div>
+</header>
+
+
+<div class="coverproductos">
+  <div class="sombra">
+    <img src="logo2.png" alt="">
+    <h1>Nuestros Productos</h1>
+  </div>
+</div>
+
+
+<div class="categoriaproductos">
+  <div class="cards">
+    <div class="card">
+      <img src="producto1.jpg">
+      <div class="card-title">
+        <a href="#" class="toggle-info btn">
+          <span class="left"></span>
+          <span class="right"></span>
+        </a>
+        <h2>
+            Linea Tradicional
+        </h2>
+      </div>
+      <div class="card-flap flap1">
+        <div class="card-description">
+          <li><span class="ion-ios-arrow-right"></span> Arequipe</li>
+          <li><span class="ion-ios-arrow-right"></span> Postres</li>
+          <li><span class="ion-ios-arrow-right"></span> Leche Condensada</li>
+        </div>
+        <div class="card-flap flap2">
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+    <img src="producto2.jpg">
+    <div class="card-title">
+      <a href="#" class="toggle-info btn">
+        <span class="left"></span>
+        <span class="right"></span>
+      </a>
+      <h2>
+          Linea Institucional
+      </h2>
+    </div>
+    <div class="card-flap flap1">
+      <div class="card-description">
+        <li><span class="ion-ios-arrow-right"></span> Nebraska Premium</li>
+        <li><span class="ion-ios-arrow-right"></span> Delicias de mi Pradera</li>
+        <li><span class="ion-ios-arrow-right"></span> Productos Industriales</li>
+      </div>
+      <div class="card-flap flap2">
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="producto3.jpg">
+    <div class="card-title">
+      <a href="#" class="toggle-info btn">
+        <span class="left"></span>
+        <span class="right"></span>
+      </a>
+      <h2>
+          Sin Azúcar
+      </h2>
+    </div>
+    <div class="card-flap flap1">
+      <div class="card-description">
+        <li>Ver prodúctos</li>
+      </div>
+      <div class="card-flap flap2">
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<footer>
+  <div class="contenedorfoot">
+    <div class="grid">
+      <h1>Contacto</h1>
+      <li><span class="ion-android-call"></span> 493 43 64 (Medellín)</li>
+      <li><span class="ion-android-call"></span> 556 35 33 (Planta - La Unión, Ant)</li>
+      <li><span class="ion-ios-location"></span> Calle 42 N. 101-54 Oficina 10</li>
+      <li><span class="ion-ios-at"></span> nebraskaventas@une.net.co</li>
+    </div>
+    <div class="grid">
+      <h1>Secciones</h1>
+      <li><span class="ion-flash"></span> Productos</li>
+      <li><span class="ion-flash"></span> Quiénes Somos</li>
+      <li><span class="ion-flash"></span> Clientes</li>
+      <li><span class="ion-flash"></span> Recetas</li>
+    </div>
+    <div class="grid">
+      <span class="ion-quote"></span>
+      <p>Somos una empresa productora y comercializadora de dulces de leche y frutas; hacemos uso de la tecnología y gestión de la calidad en nuestros procesos, cuidando al medio ambiente y la salud de los consumidores.</p>
+      <span class="ion-quote"></span>
+    </div>
+  </div>
+</footer>
+<div class="redesyfirmalaooz">
+  <div class="contenedortotalfirma">
+  <div class="laooz">
+    <a href="#">Desarrollado por Laooz Studios</a>
+  </div>
+  <div class="redessocialesfo">
+    <li><span class="ion-social-twitter"></span></li>
+    <li><span class="ion-social-instagram"></span></li>
+    <li><span class="ion-social-facebook"></span></li>
+    <li><span class="ion-social-youtube"></span></li>
+  </div>
+  </div>
+</div>
+
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js'></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  var zindex = 10;
+
+  $("div.card").click(function(e){
+    e.preventDefault();
+
+    var isShowing = false;
+
+    if ($(this).hasClass("show")) {
+      isShowing = true
+    }
+
+    if ($("div.cards").hasClass("showing")) {
+      // a card is already in view
+      $("div.card.show")
+        .removeClass("show");
+
+      if (isShowing) {
+        // this card was showing - reset the grid
+        $("div.cards")
+          .removeClass("showing");
+      } else {
+        // this card isn't showing - get in with it
+        $(this)
+          .css({zIndex: zindex})
+          .addClass("show");
+
+      }
+
+      zindex++;
+
+    } else {
+      // no cards in view
+      $("div.cards")
+        .addClass("showing");
+      $(this)
+        .css({zIndex:zindex})
+        .addClass("show");
+
+      zindex++;
+    }
+
+  });
+});
+</script>
+
+</body>
+</html>

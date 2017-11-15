@@ -3,12 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-<title>Sheet Slider</title>
+<title>Sheet Slider</title>	
 
 	<link type="image/x-icon" rel="icon" href="http://www.zkreations.com/favicon.ico" />
-	<!--reset y aspecto-->	<!--Slider-->
+	<!--reset y aspecto-->
+	<link type="text/css" rel="stylesheet" href="libs/css/estilos.min.css"/>
+	<link type="text/css" rel="stylesheet" href="libs/css/display.css"/>
+	
+	<!--Slider-->
 	<link type="text/css" rel="stylesheet" href="sheet-slider.min.css"/>
-
+	
 	<!--theme
 	<link type="text/css" rel="stylesheet" href="dist/theme/darken.css"/>
 	<link type="text/css" rel="stylesheet" href="dist/color/cyan.css"/>-->
@@ -16,7 +20,10 @@
 
 <body>
 <main>
-
+<header>
+    <h1>Sheet Slider</h1>
+    <span>Pase de imagenes a base de CSS puro</span>
+</header>
 <section>
 
 <div>
@@ -31,46 +38,45 @@
    <ul>
    <!--imagenes-->
       <li class="tab">
-         <img src="imagenes/farma.jpg" />
+         <img src="img/slide-img01.jpg" />
          <div>
             <h3>2 Weeks</h3>
             <span>Texto secundario con <a href="#urlPage">enlace</a></span>
          </div>
       </li>
-
-			<li class="tab">
-         <img src="imagenes/farma.jpg" />
+      
+      <li class="tab">
+         <img src="img/slide-img02.jpg"/>
          <div>
-            <h3>2 Weeks</h3>
+            <h3>Artwork surreal</h3>
+            <span>Texto secundario sin enlace</span>
+         </div>
+      </li>
+      
+      <li class="tab">
+         <img src="img/slide-img03.jpg"/>
+         <div>
+            <h3>Cat under a carpet</h3>
+            <span>Texto secundario sin enlace</span>
+         </div>
+      </li>
+      
+      <li class="tab">
+         <img src="img/slide-img04.jpg"/>
+         <div>
+            <h3>Watercolor landscape</h3>
             <span>Texto secundario con <a href="#urlPage">enlace</a></span>
          </div>
       </li>
-
-			<li class="tab">
-         <img src="imagenes/farma.jpg" />
+      <li class="tab">
+         <img src="img/slide-img05.jpg"/>
          <div>
-            <h3>2 Weeks</h3>
-            <span>Texto secundario con <a href="#urlPage">enlace</a></span>
+            <h3>Cute girl and cat</h3>
+            <span>Texto secundario sin enlace</span>
          </div>
-      </li>
-
-			<li class="tab">
-         <img src="imagenes/farma.jpg" />
-         <div>
-            <h3>2 Weeks</h3>
-            <span>Texto secundario con <a href="#urlPage">enlace</a></span>
-         </div>
-      </li>
-
-			<li class="tab">
-         <img src="imagenes/farma.jpg" />
-         <div>
-            <h3>2 Weeks</h3>
-            <span>Texto secundario con <a href="#urlPage">enlace</a></span>
-         </div>
-      </li>
+      </li> 
    </ul>
-
+   
    <!--botones-->
    <div class="sh-btns">
       <label for="s1"></label>
@@ -79,7 +85,7 @@
       <label for="s4"></label>
       <label for="s5"></label>
    </div>
-
+   
    <!--flechas-->
    <div class="sh-arrows">
       <label for="s1"></label>
@@ -93,9 +99,19 @@
 </div>
 </section>
 
-
+<section class="details">
+<div>
+    <ul>
+        <li><i class="material-icons">&#xE1B1;</i><h3>Responsive</h3><span>Diseño adaptable para cada dispositivo.</span></li>
+        <li><i class="material-icons">&#xE87E;</i><h3>Sin Javascript</h3><span>Desarrollado con CSS Puro sin utilizar javascript.</span></li>
+        <li><i class="material-icons">&#xE80B;</i><h3>Compatible</h3><span>Google Chrome, Opera, Firefox, IE 11+, Edge, Safari.</span></li>
+    </ul>
+</div>
+</section>
 </main>
-
+<footer>
+   <a href="https://github.com/zkreations/SheetSlider" title="repositorio github"><img src="libs/github.png" width="64" height="64"></a>
+</footer>
 
 
 </body>

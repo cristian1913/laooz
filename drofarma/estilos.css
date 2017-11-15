@@ -701,9 +701,6 @@ box-shadow: 0px 3px 19px 1px rgba(0,0,0,0.75);
 .productoventa img {
   width: 300px;
   height: 280px;
-  -webkit-box-shadow: 0px 0px 38px -4px rgba(125,125,125,1);
--moz-box-shadow: 0px 0px 38px -4px rgba(125,125,125,1);
-box-shadow: 0px 0px 38px -4px rgba(125,125,125,1);
 border: 2px solid #fff;
 border-radius: 5px;
 }

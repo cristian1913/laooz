@@ -800,9 +800,14 @@ border-radius: 5px;
   padding: 10px 0px 70px 0px;
 }
 
+.objetivos {
+  overflow: hidden;
+}
+
 .objetivos h3 {
-  font-size: 40px;
-  padding: 50px 0px 30px 80px;
+  font-size: 50px;
+  padding: 0px 0px 30px 80px;
+
 }
 
 .objetivos span {

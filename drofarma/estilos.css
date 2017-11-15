@@ -670,7 +670,6 @@ box-shadow: 0px 3px 19px 1px rgba(0,0,0,0.75);
 
 .contenedorproductos {
   width: 100%;
-  margin: auto;
   overflow: hidden;
 }
 
@@ -685,17 +684,50 @@ box-shadow: 0px 3px 19px 1px rgba(0,0,0,0.75);
   color: #fff;
   text-shadow: 1px 2px 3px #000;
   font-weight: 600;
+  margin-bottom: 50px;
+}
+
+.contenedorproductos h3 {
+  font-size: 40px;
+  font-weight: 400;
+  text-align: center;
+  padding-bottom: 20px ;
 }
 
 .productoventa {
-  width: 33%;
+  width: 370px;
+  height: 500px;
   margin: auto;
   float: left;
-  padding: 50px 10px 100px 50px;
+  padding: 50px 10px 50px 50px;
 }
 
 .productoventa img {
   width: 300px;
+  height: 280px;
+  -webkit-box-shadow: 0px 0px 38px -4px rgba(125,125,125,1);
+-moz-box-shadow: 0px 0px 38px -4px rgba(125,125,125,1);
+box-shadow: 0px 0px 38px -4px rgba(125,125,125,1);
+border: 2px solid #fff;
+border-radius: 5px;
+}
+
+.productoventa img:hover {
+  border-radius: 0px;
+  width: 310px;
+  height: 290px;
+  transition: 0.9s;
+}
+
+.productoventa a {
+  text-decoration: none;
+  color: #000;
+  box-shadow: 1px 2px 1px solid #1d2847;
+}
+
+.productoventa a:hover {
+  color: #50abf1;
+  transition: 0.5s;
 }
 
 .productoventa h4 {
@@ -705,7 +737,10 @@ box-shadow: 0px 3px 19px 1px rgba(0,0,0,0.75);
 
 .productoventa p{
   font-size: 17px;
-  color: #8C8C8C;
+  color: #777;
+  text-align: justify;
+  width: 300px;
+  line-height: 17px;
 }
 
 .contenedornosotros {

@@ -1031,9 +1031,8 @@ li.tab
     text-shadow: 0 1px 1px rgba(0, 0, 0, .3), 0 1px 5px rgba(0, 0, 0, .16);
     max-width: 40%;
     opacity: 0;
-    margin-top: 20px;
+    margin: 30px 30px 0px 0px;
     background-color: rgba(0,0,0,0.8);a
-    padding-top: 10px;
   }
 
 .sheet-slider ul .tab>div a {
@@ -1050,8 +1049,9 @@ li.tab
     font-weight: 700
 }
 .sheet-slider ul .tab>div span {
-    font-size: 1.1em;
-    font-weight: 500
+    font-size: 18px;
+    font-weight: 500;
+    padding-right: 30px;
 }
 
 .botonver {

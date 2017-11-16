@@ -1022,14 +1022,14 @@ li.tab
 }
 
 /*estilo para textos*/
-.sheet-slider ul .tab>div {
+.sheet-slider ul .tab > div {
     left: 0;
     top: 0;
     -webkit-transform: translateY(3em);
     transform: translateY(3em);
     position: absolute;
     text-shadow: 0 1px 1px rgba(0, 0, 0, .3), 0 1px 5px rgba(0, 0, 0, .16);
-    max-width: 500px;
+    max-width: 40%;
     opacity: 0;
     margin-top: 20px;
     background-color: rgba(0,0,0,0.8);a
@@ -1161,7 +1161,8 @@ li.tab>div {
     padding-left: 2.5em;
     position: absolute;
     text-shadow: 0 1px 1px rgba(0, 0, 0, .3), 0 1px 5px rgba(0, 0, 0, .16);
-    max-width: 80%;
+    max-width: 50%;
+    padding-bottom: 50px;
     opacity: 0
 }
 .sheet-slider ul .tab>div a {
@@ -1176,11 +1177,13 @@ li.tab>div {
 .sheet-slider ul .tab>div h3 {
     font-size: 2em;
     margin: 0;
-    font-weight: 700
+    font-weight: 700;
+    padding: 50px 0px 20px 0px ;
 }
 .sheet-slider ul .tab>div span {
-    font-size: 1.1em;
-    font-weight: 500
+    font-size: 18px;
+    font-weight: 500;
+    padding: 0px 0px 20px 0px;
 }
 
 /*estilo para los botones*/

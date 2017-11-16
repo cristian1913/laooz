@@ -660,23 +660,47 @@ box-shadow: 0px 3px 19px 1px rgba(0,0,0,0.75);
   font-weight: 600;
 }
 
+</**EStilos de contenido servicios**/>
+
 .contenedorservicios .articulo {
   width: 100%;
   margin: auto;
-  padding: 50px 0px 50px 50px;
+}
+
+.articulo .imagenservicio {
+  width: 50%;
+  height: 500px;
+  float: left;
+  background-image: url('imagenes/farma.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.contenedorservicios .guiones {
+  width: 50%;
+  float: right;
+  padding: 30px 0px;
+  background: #fff;
+}
+
+.contenedorservicios .guiones span {
+  padding-right: 10px;
 }
 
 .contenedorservicios h3 {
-  font-size: 35px;
-  padding: 30px 0px 10px 50px;
-  font-weight: 600;
+  font-size: 25px;
+  padding: 10px 0px 0px 50px;
+  font-weight: 400;
+  margin-bottom: 10px;
 }
 
-.contenedorservicios p {
-  width: 70%;
-  font-size: 20px;
-  padding: 5px 0px 0px 50px;
+.contenedorservicios h3:hover {
+  font-size: 30px;
+  transition: 0.6s;
 }
+
+
+</**EStilos de contenido servicios**/>
 
 .contenedorproductos {
   width: 100%;

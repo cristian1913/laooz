@@ -33,6 +33,7 @@ nav a, .hamburger {
 
 nav a:hover, .menu-fixed a:hover {
   border-bottom: 3px solid #f1142b;
+  transition: 0.3s;
   color: #FFF;
 }
 
@@ -81,6 +82,10 @@ header.menu-fixed {
   -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
   box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
   z-index: 999;
+}
+
+.menu-fixed-out {
+  background: rgba(0, 0, 0, 0.3);
 }
 .menu-fixed nav a, .menu-fixed .hamburger {
 	color: #000;

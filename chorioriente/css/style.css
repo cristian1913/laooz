@@ -1,0 +1,543 @@
+*, *:before, *:after {box-sizing: border-box;}
+
+body {
+  font-family: 'Oswald', sans-serif;
+  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+	line-height: 1;
+}
+
+nav ul {
+  float: right; margin: 0;
+}
+
+nav li {
+  display: none;
+  float: left;
+  list-style: none;
+  font-family: 'Oswald', sans-serif;
+}
+
+nav a, .hamburger {
+  display: inline-block;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 400;
+	text-transform: uppercase;
+  text-decoration: none;
+  padding: 28px 15px;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+  font-family: 'Oswald', sans-serif;
+}
+
+
+nav a:hover, .menu-fixed a:hover {
+  border-bottom: 3px solid #f1142b;
+  color: #FFF;
+}
+
+.hamburger {
+	float: right;
+}
+.hamburger span {
+	display: inline-block;
+	width: 0;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.hamburger:before {
+	content: '\2630';
+	font-size: 2em;
+}
+
+.inner {
+  padding: 0 3vw;
+}
+section .inner {
+  padding: 50px 3vw;
+  line-height: 1.5;
+}
+section.alternate {
+  background: #000;
+  color: #fff;
+}
+header {
+  position: fixed;
+  width: 100%;
+  padding-top: 30px;
+  -webkit-transition: 0.7s all;
+  transition: 0.7s all;
+  z-index: 100;
+  overflow: hidden;
+}
+header.menu-fixed {
+  top: 0;
+  right: 0;
+  width: 100%;
+  padding-top: 0;
+  background: #f7d02a;
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+  z-index: 999;
+}
+.menu-fixed nav a, .menu-fixed .hamburger {
+	color: #000;
+}
+.menu-fixed .hamburger {
+	padding: 20px;
+}
+.logo {
+  float: left;
+  margin: 5px 0px;
+}
+.logo img {
+  display: block;
+  max-width: 150px;
+  max-height: 128px;
+	-webkit-transition: 0.7s all;
+	transition: 0.7s all;
+}
+.menu-fixed .logo img {
+  max-width: 75px;
+  max-height: 64px;
+	fill: black;
+	margin-top: 6px;
+}
+.logo img  {
+	opacity: 1;
+	-webkit-transition: 0.7s ;
+	transition: 0.7s ;
+}
+.menu-fixed .logo img  {
+	opacity: ;
+}
+
+@media screen and (min-width:721px) {
+	.hamburger {
+		display: none;
+	}
+	nav ul li {
+		display: inline;
+	}
+}
+@media screen and (min-width:960px) {
+	.inner {
+	  max-width: 1100px;
+		margin: 0 auto;
+	}
+}
+@media screen and (min-width:1201px) {
+	.logo_svg {
+		max-width: 180px;
+		max-height: 154px;
+	}
+}
+
+/*
+LESS Document
+Author: Jacob Scott
+Created: 11-12-15
+Modified: 11-14-15
+*/
+/* Import Fonts */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic,600italic,700,700italic,800,800italic,300italic,300);
+/* Colors */
+/* Fix Browser Defaults */
+* {
+  -webkit-margin-start: 0;
+  -webkit-margin-end: 0;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  -webkit-padding-start: 0;
+  -webkit-padding-end: 0;
+}
+body {
+  padding: 0;
+  margin: 0;
+}
+* {
+  font-family: 'Open Sans', Arial, sans-serif;
+}
+a {
+  color: #00a8ff;
+}
+a:hover {
+  color: #005a89;
+}
+/* NEWS SLIDER STYLES */
+.slide-window {
+  display: block;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  overflow: hidden;
+}
+.slide-strip {
+  display: block;
+  position: relative;
+  /* height is equal to slide height */
+  overflow-y: hidden;
+  transition: all cubic-bezier(0.61, 0.34, 0.53, 1.01);
+}
+.slide {
+  display: block;
+  position: relative;
+  float: left;
+  height: 600px;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+.slide-control {
+  display: block;
+  position: absolute;
+  z-index: 100;
+  opacity: 1.0;
+  font-size: 3.5em;
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+.slide-control:hover {
+  color: #f81e1e;
+  transition: all 0.35s ease;
+  opacity: 1.0;
+  cursor: pointer;
+}
+.slide-indicator {
+  width: auto;
+  display: inline;
+  position: absolute;
+  z-index: 500;
+  height: 24px;
+  margin: 0 auto;
+  letter-spacing: 8px;
+}
+.slide-indicator::selection {
+  background-color: transparent;
+}
+.indicatorDot {
+  display: inline;
+  color: white;
+  transition: all 0.35s ease;
+}
+.indicatorDot.activeSlide {
+  color: #f81e1e;
+}
+.indicatorDot:hover {
+  color: #f81e1e;
+  cursor: pointer;
+}
+.indicatorDot::selection {
+  background-color: transparent;
+}
+/* Slide Content */
+#s1 {
+  background-color: #48e9e9;
+}
+#s2 {
+  background-color: #cee948;
+}
+#s3 {
+  background-color: #e9b448;
+}
+#s4 {
+  background-color: #e96348;
+}
+#s5 {
+  background-color: #48b3e9;
+}
+#s6 {
+  background-color: #48e963;
+}
+#s1 {
+  background-image: url('https://c1.staticflickr.com/1/749/20748875594_a8b13d064b_z.jpg');
+}
+#s2 {
+  background-image: url('https://c1.staticflickr.com/1/606/21117466242_578a1b8537_z.jpg');
+}
+#s3 {
+  background-image: url('https://c1.staticflickr.com/1/683/20695775525_146e3ec538_z.jpg');
+}
+#s4 {
+  background-image: url('https://c1.staticflickr.com/1/770/20022459404_0cb23e9c33_z.jpg');
+}
+#s5 {
+  background-image: url('https://c2.staticflickr.com/6/5649/20532616886_93180fce9a_z.jpg');
+}
+#s6 {
+  background-image: url('https://c2.staticflickr.com/6/5816/20416797349_0702d7a5d5_z.jpg');
+}
+#s7 {
+  background-image: url('https://c1.staticflickr.com/1/592/20605938165_b4642fbe1b_z.jpg');
+}
+
+.nuestracalidagome {
+    background-color: rgb(247, 208, 42);
+    background-image: url('../imagenes/fondochori.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    text-align: center;
+    text-transform: uppercase;
+      color: #fff;
+  }
+    .nuestracalidagome h1 {
+      font-weight: 300;
+      font-size: 30px;
+      text-shadow: 1px 1px 1px #000;
+      font-family: 'Oswald', sans-serif;
+    }
+    .nuestracalidagome h2 {
+      font-weight: 900;
+      font-size: 40px;
+    }
+    .nuestracalidagome img {
+      width: 150px;
+      height: auto;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #F66330;
+      padding-bottom: 20px;
+    }
+
+    .wrapper {
+      background: #eee;
+      width: 100%;
+      margin: 0 auto;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      box-shadow: 0px 0px 30px black;
+      overflow: hidden;
+    }
+
+    div.perfil {
+      float: left;
+      width: 50%;
+      height: 100%;
+      clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
+      background-image: url(http://media.idownloadblog.com/wp-content/uploads/2014/10/wallpaper-steve-jobs-face-apple-34-iphone6-plus-wallpaper.jpg);
+      background-position: 50% 100%;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-color: black;
+    }
+
+    .descripcion {
+      width: 50%;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      float: left;
+      text-align: center;
+      color: #222;
+    }
+
+    .descripcion h1 {
+      margin-bottom: 5px;
+    }
+
+    .recetascont {
+      width: 100%;
+      overflow: hidden;
+      border-bottom: 1px solid rgb(194, 194, 194)
+    }
+
+    .contentrec {
+      max-width: 80%;
+      margin: auto;
+      padding: 50px 0px;
+    }
+
+    .imagenrec {
+      float: left;
+      width: 50%;
+    }
+
+    .imagenrec img {
+      width: 500px;
+      margin: 80px 0px;
+    }
+
+    .contentrec .textorec {
+      float: right;
+      width: 50%;
+    }
+
+    .textorec h2 {
+      font-size: 40px;
+      margin: 50px 0px 30px 10px;
+      font-family: 'Oswald', sans-serif;
+      font-weight: 400;
+    }
+
+    .textorec p {
+      width: 70%;
+      line-height: 20px;
+      padding: 10px 0px 70px 10px;
+    }
+
+    .textorec a {
+      text-decoration: none;
+      background: #cc2128;
+      margin: 10px;
+      color: #fff;
+      font-family: 'Oswald', sans-serif;
+      padding: 10px 25px;
+      text-align: center;
+      border: 2px solid #cc2128;
+      border-radius: 30px;
+    }
+
+    .textorec a:hover {
+      background: #fff;
+      color: #cc2128;
+      transition: 0.5s;
+    }
+
+    .mapasyformulario {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+    padding: 70px 0px;
+  }
+
+  .mapasyformulario .facebookredsocial {
+    width: 50%;
+    float: left;
+  }
+    .mapasyformulario .mapashome {
+      width: 100%;
+      max-width: 40%;
+      float: right;
+      text-align: center;
+    }
+    .mapasyformulario .mapashome img {
+      width: 100%;
+      height: auto;
+    }
+    .mapasyformulario .mapashome span {
+      font-size: 60px;
+      color: rgb(237, 50, 55);
+    }
+    .mapasyformulario .mapashome h1 {
+      font-weight: 300;
+      font-size: 26px;
+      color: rgb(161, 161, 161);
+      font-family: 'Oswald', sans-serif;
+    }
+    .mapasyformulario .mapashome p {
+      font-weight: 100;
+      font-size: 14px;
+      margin-bottom: 50px;
+      margin-top: 10px;
+    }
+
+    .clientescont {
+      width: 100%;
+      margin: auto;
+    }
+
+    .contentcli {
+      max-width: 80%;
+      margin: auto;
+    }
+
+    .marquee {
+      background-image: url(http://gigwalk.com/home.v4/images/clientlogos.png);
+      width: 90%;
+      height: 180px;
+      -webkit-animation: marquee 10s infinite linear;
+      margin: auto;
+    }
+
+    @-webkit-keyframes marquee {
+      0% {
+        background-position: 0;
+      }
+
+      100% {
+        background-position: -1190px;
+      }
+    }
+
+    .galeria {
+      width: 100%;
+      padding: 50px 0px;
+      border-bottom: 5px solid #cc2128;
+    }
+
+    .galeria h2 {
+      font-size: 40px;
+      font-family: 'Oswald', sans-serif;
+      text-align: center;
+      font-weight: 400;
+      border-bottom: 2px solid #cc2128;
+      max-width: 300px;
+      padding-bottom: 10px;
+      margin: auto;
+    }
+
+    #photoGrid {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      height: 500px;
+    }
+    #photoGrid img {
+      max-width: 200px;
+      max-height: 250px;
+      border-radius: 35px;
+      border: 2px solid #333;
+      margin: 10px;
+      -webkit-transition: all 2s;
+      -moz-transition: all 2s;
+      -o-transition: all 2s;
+      transition: all 2s;
+    }
+    #photoGrid img:hover {
+      -webkit-animation-name: example;
+      -webkit-animation-duration: 0.8s;
+      -webkit-animation-timing-function: ease-in-out;
+      -moz-animation-name: example;
+      -moz-animation-duration: 0.8s;
+      -moz-animation-timing-function: ease-in-out;
+      animation-name: example;
+      animation-duration: 0.8s;
+      animation-timing-function: ease-in-out;
+      max-width: 20vw;
+      max-height: 80vh;
+    }
+    .photo-zoom-animation {
+      -webkit-animation-name: example;
+      -webkit-animation-duration: 0.8s;
+      -webkit-animation-timing-function: ease-in-out;
+      -moz-animation-name: example;
+      -moz-animation-duration: 0.8s;
+      -moz-animation-timing-function: ease-in-out;
+      animation-name: example;
+      animation-duration: 0.8s;
+      animation-timing-function: ease-in-out;
+    }
+    .display-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    @keyframes example {
+      from {
+        max-width: 200px;
+        max-height: 250px;
+      }
+      to {
+        max-width: 20vw;
+        max-height: 80vh;
+      }
+    }
+    .image-border {
+      border: 2px solid #333;
+    }

@@ -491,7 +491,8 @@ a:hover {
       justify-content: center;
       align-items: center;
       width: 100vw;
-      height: 500px;
+      height: 170px;
+      padding-top: 15px;
     }
     #photoGrid img {
       max-width: 200px;

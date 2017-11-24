@@ -606,20 +606,26 @@ box-shadow: 0px 2px 19px 1px rgba(140,140,140,1);
     }
 
     .footer-list-top img {
-      width: 250px;
+      width: 270px;
       text-align: center;
-      margin: 15px 0px 0px 180px;
+      margin: 20px 0px 0px 150px;
     }
 
     .footer-list-top > li {
       text-align: center;
-      padding-bottom: 10px;
+      padding-bottom: 20px;
     }
 
     .footer-list-top li a {
       font-size: 20px;
-      font-weight: 300;
+      font-weight: 200;
       color: #fff;
+      padding-left: 10px;
+    }
+
+    .footer-list-header {
+      font-size: 30px;
+      padding-right: 10px;
     }
 
     .footer-list-top li a:hover {
@@ -628,8 +634,13 @@ box-shadow: 0px 2px 19px 1px rgba(140,140,140,1);
       transition: 0.5s;
     }
 
+    .footer-list-top li a span {
+      font-size: 25px;
+      padding-right: 10px;
+    }
+
     .footer-list-header {
-      padding: 10px 0 5px 0;
+      padding: 15px 0px 15px 0px;
       color: #fff;
       font: 25px "Oswald", sans-serif;
     }

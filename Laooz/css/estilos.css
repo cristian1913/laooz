@@ -299,7 +299,7 @@
     	color: #ddd;
     	font-weight: 300;
       font-family: 'Raleway', sans-serif;
-      padding-left: 50px; 
+      padding-left: 50px;
     }
 
     .texto p {
@@ -339,9 +339,9 @@
     }
 
     .contenidogrid {
-    	width: 1100px;
+    	width: 80%;
       height: 650px;
-    	margin: 50px 50px 50px 250px;
+    	margin: 50px 50px 50px 150px;
     	padding: 50px 0px 50px 20px;
       background: rgba(255,255,255,0);
     background: rgba(255,255,255,0.08);
@@ -687,7 +687,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 
     .footer {
       margin: 0px 0px;
-      height: 100px; 
+      height: 100px;
       text-align: center;
     	overflow: hidden;
       background: #ddd;
@@ -903,7 +903,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
     .contenidofooter {
     	width: 80%;
     	margin: auto;
-      padding: 50px 0px; 
+      padding: 50px 0px;
     }
 
     .contentfoot {
@@ -1169,7 +1169,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
   .contenedorsomos {
     width: 100%;
     overflow: hidden;
-    font-family: 'Raleway', sans-serif; 
+    font-family: 'Raleway', sans-serif;
     color: #000;
     padding: 50px 0px;
   }
@@ -1196,7 +1196,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
     background-size: cover;
     background-attachment: fixed;
   }
-  
+
   .mivis:hover {
     opacity: 1;
   }
@@ -1213,7 +1213,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
     transition: 0.5s;
   }
   .misionp h2 {
-    font-size: 40px;  
+    font-size: 40px;
     text-align: left;
     padding: 70px 0px 0px 200px;
     color: #fff
@@ -1248,7 +1248,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
   }
 
   .visionp h2 {
-    font-size: 40px;  
+    font-size: 40px;
     text-align: left;
     padding: 70px 0px 0px 90px;
     color: #fff
@@ -1274,7 +1274,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
     font-size: 40px;
     font-weight: 400;
     text-align: center;
-    padding: 
+    padding:
   }
 
   .contentsomos .historiacont {
@@ -1338,9 +1338,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
     font-weight: 400;
     text-align: center;
     padding: 50px 0px 0px 0px;
-    font-family: 'Raleway', sans-serif; 
+    font-family: 'Raleway', sans-serif;
     color: #000;
-    text-shadow: 1px 1px 1px #eee; 
+    text-shadow: 1px 1px 1px #eee;
 
   }
 
@@ -1364,8 +1364,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
     display: inline-block;
     font-family: 'Raleway', sans-serif;
     font-size: 16px;
-    margin: 10px 20px 0px 40px;
-    max-width: 355px;
+    margin: 10px 20px 0px 7px;
+    max-width: 30.5%;
     min-width: 230px;
     overflow: hidden;
     position: relative;

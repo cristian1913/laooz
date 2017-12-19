@@ -3,53 +3,401 @@
 	margin: 0px;
 }
 
-.menu {
-	float: right;
-	margin: 30px;
-	width: 65%;
-	font-family: 'Raleway', sans-serif; 
-	text-transform: uppercase;
-	font-weight: 500;
-
+a {
+  color: inherit;
+  text-decoration: none;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
 }
 
-.menu li {
+a:hover {
+  color: #fff;
 }
 
-ul, ol {
-	list-style: none;
+.box ul, li  {
+  list-style-type: none;
+  margin: 0 auto;
+  padding: 0;
 }
 
-.nav li a {
-	color: #fff;
-	text-decoration: none;
-	padding: 10px 25px;
-	display: block;
-	
+.box ul li {
+  display: inline-block;
 }
 
-.nav li:hover {
-	background:#000;
-	transition: 0.5s;
-	color: #a3d600;
+.box ul li a:hover {
+	color: #333;
 }
 
-.nav > li {
-	float: left;
+header,
+section,
+.containermenu, .box {
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
 }
 
-.nav li ul {
-	display:none;
-	position: absolute;
-	min-width: 140px;
+header {
+  background: #000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+  height: 60px;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: initial;
+  z-index: 9;
+  -webkit-transform: matrix(1, 0, 0, 1, 0, 0);
+  -moz-transform: matrix(1, 0, 0, 1, 0, 0);
+  transform: matrix(1, 0, 0, 1, 0, 0);
+  -webkit-transition: all .5s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
 }
 
-.nav li:hover > ul {
-	display: block;
-	background: rgba(0,0,0,0.4);
-	content: #a3d600;
+html.active header {
+  -webkit-transform: matrix(1, 0, 0, 1, -320, 0);
+  -moz-transform: matrix(1, 0, 0, 1, -320, 0);
+  transform: matrix(1, 0, 0, 1, -320, 0);
+  -webkit-transition: all .5s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
 }
 
-.nav li ul li {
-	position: relative;
+header .box {
+  display: none;
+  line-height: 40px;
+  margin: 0 80px;
+  padding: 10px 15px;
 }
+
+header .box > ul {
+  display: flex;
+}
+
+header .box > ul li {
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+header .box  ul li a:hover {
+  color: #fff;
+}
+
+#overlay {
+  background: #000;
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  overflow: hidden;
+  position: fixed;
+  right: 0;
+  top: 0;
+  visibility: hidden;
+  width: 100%;
+  z-index: 99;
+  -webkit-transition: all .5s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+html.active #overlay {
+  opacity: .65;
+  visibility: visible;
+  -webkit-transition: all .5s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+#home,
+menu .logo  a {
+  border-radius: 8px;
+  box-shadow: inset 0 0 0 2px #333, inset 0 0 0 3px #FF5959;
+  color: #FF5959;
+  display: block;
+  font-size: 32px;
+  height: 36px;
+  left: 0;
+  line-height: 36px;
+  margin: 10px 20px 10px 30px;
+  overflow: hidden;
+  padding: 2px;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  width: 50px;
+}
+
+
+menu .logo > a {
+  display: inline-block;
+  margin: 0 auto 0 10px;
+  position: relative;
+}
+
+.box .sign-up {
+  background: #a3d600;
+  border: 2px solid #a3d600;
+  border-radius: 5px;
+  color: #333;
+  font-family: 'Abel', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  height: 40px;
+  letter-spacing: 1px;
+  line-height: 40px;
+  margin: 10px;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  text-align: center;
+}
+
+.box .logo {
+	width: 210px;
+    overflow: hidden;
+    float: left;
+    text-align: left;
+}
+
+.logo {
+	font-size: 32px;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 10px;
+    position: relative;
+}
+
+.box .sign-up:hover {
+  background: #fff;
+  color: #000;
+}
+
+.box.sign-up a {
+  display: block;
+  color: #000;
+}
+
+.box.sign-up span {
+  margin: 0px 0px 0px 15px;
+}
+
+#close-menu {
+  border-radius: 20px;
+  color: #333;
+  cursor: pointer;
+  display: block;
+  height: 20px;
+  line-height: 20px;
+  margin: 15px 20px 15px auto;
+  padding: 4px;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 20px;
+}
+
+section {
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  z-index: 2;
+  -webkit-transform: matrix(1, 0, 0, 1, 0, 0);
+  -moz-transform: matrix(1, 0, 0, 1, 0, 0);
+  transform: matrix(1, 0, 0, 1, 0, 0);
+  -webkit-transition: all .5s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+#intro {
+  background-image: url('https://goo.gl/BlNbJE');
+}
+
+#portfolio {
+  background-image: url('https://goo.gl/Uwkg0I');
+}
+
+#blog {
+  background-image: url('https://goo.gl/Wy3PSL');
+}
+
+html.active,
+html.active body {
+  overflow: hidden;
+}
+
+html.active section {
+  -webkit-transform: matrix(1, 0, 0, 1, -320, 0);
+  -moz-transform: matrix(1, 0, 0, 1, -320, 0);
+  transform: matrix(1, 0, 0, 1, -320, 0);
+  -webkit-transition: all .5s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+section > h1 {
+  color: #333;
+  font-size: 2em;
+  left: 0;
+  margin: 0 10%;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  text-transform: uppercase;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+section > h1 > span {
+  display: block;
+  font-family: 'Cabin', cursive;
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 400;
+  text-transform: none;
+}
+
+menu {
+  background: #FFF;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  right: -370px;
+  top: 0;
+  width: 370px;
+  z-index: 1;
+  -webkit-transition: all .5s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+menu .containermenu {
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  width: 60%;
+  -webkit-transform-origin: 0% 50% 0px;
+  -moz-transform-origin: 0% 50% 0px;
+  transform-origin: 0% 50% 0px;
+  -webkit-transform: matrix(0.8, 0, 0, 0.9, 40, 0);
+  -moz-transform: matrix(0.8, 0, 0, 0.9, 40, 0);
+  transform: matrix(0.8, 0, 0, 0.9, 40, 0);
+  -webkit-transition: all .5s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+menu .containermenu .box {
+  border-top: 3px solid;
+  height: calc(100% - 33px);
+  overflow: visible;
+  overflow-Y: scroll;
+  padding: 0 20px 30px 0;
+  position: relative;
+}
+
+menu .box ul:nth-child(1) {
+  border-bottom: 3px solid;
+}
+
+menu .box ul {
+  padding: 10px 0;
+}
+
+menu .box ul li {
+	float: none;
+}
+
+menu ul li {
+  border-bottom: 1px solid #EDEDED;
+  display: block;
+  font-size: 13px;
+  font-weight: bold;
+  height: 39px;
+  letter-spacing: 0.12em;
+  line-height: 39px;
+  text-transform: uppercase;
+}
+
+menu ul:nth-child(2) li {
+  font-size: 10px;
+}
+
+menu ul:nth-child(2) li:last-child {
+  border-bottom: 1px solid #EDEDED;
+}
+
+menu ul:nth-child(3) li {
+  border: 0;
+  display: inline-block;
+}
+
+menu ul:nth-child(3) li > a {
+  border-radius: 100%;
+  color: #898989;
+  display: block;
+  font-size: 22px;
+  height: 24px;
+  line-height: 24px;
+  margin: 2px 4px;
+  padding: 5px;
+  text-align: center;
+  width: 24px;
+}
+
+menu ul li:last-child {
+  border: 0;
+}
+
+html.active menu {
+  right: 0;
+  z-index: 999;
+}
+
+html.active menu .containermenu {
+  -webkit-transform-origin: 0% 50% 0px;
+  -moz-transform-origin: 0% 50% 0px;
+  transform-origin: 0% 50% 0px;
+  -webkit-transform: matrix(1, 0, 0, 1, 0, 0);
+  -moz-transform: matrix(1, 0, 0, 1, 0, 0);
+  transform: matrix(1, 0, 0, 1, 0, 0);
+  -webkit-transition: all .5s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+#menu {
+  cursor: pointer;
+  display: block;
+  font-size: 30px;
+  height: 45px;
+  line-height: 40px;
+  margin: 10px 20px;
+  position: fixed;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 40px;
+}
+
+@media only screen and (min-width: 520px) {
+  header .containermenu {
+    max-width: 900px
+  }
+  header .box {
+    display: block;
+  }
+  section > h1 {
+    font-size: 3em
+  }
+}
+

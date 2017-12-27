@@ -1,238 +1,123 @@
-var $item = $('.carousel .item'); 
-var $wHeight = $(window).height();
-$item.eq(0).addClass('active');
-$item.height($wHeight); 
-$item.addClass('full-screen');
+$(document).ready(function() {
 
-$('.carousel img').each(function() {
-  var $src = $(this).attr('src');
-  var $color = $(this).attr('data-color');
-  $(this).parent().css({
-    'background-image' : 'url(' + $src + ')',
-    'background-color' : $color
+  var $slider = $(".slider"),
+      $slideBGs = $(".slide__bg"),
+      diff = 0,
+      curSlide = 0,
+      numOfSlides = $(".slide").length-1,
+      animating = false,
+      animTime = 500,
+      autoSlideTimeout,
+      autoSlideDelay = 6000,
+      $pagination = $(".slider-pagi");
+
+  function createBullets() {
+    for (var i = 0; i < numOfSlides+1; i++) {
+      var $li = $("<li class='slider-pagi__elem'></li>");
+      $li.addClass("slider-pagi__elem-"+i).data("page", i);
+      if (!i) $li.addClass("active");
+      $pagination.append($li);
+    }
+  };
+
+  createBullets();
+
+  function manageControls() {
+    $(".slider-control").removeClass("inactive");
+    if (!curSlide) $(".slider-control.left").addClass("inactive");
+    if (curSlide === numOfSlides) $(".slider-control.right").addClass("inactive");
+  };
+
+  function autoSlide() {
+    autoSlideTimeout = setTimeout(function() {
+      curSlide++;
+      if (curSlide > numOfSlides) curSlide = 0;
+      changeSlides();
+    }, autoSlideDelay);
+  };
+
+  autoSlide();
+
+  function changeSlides(instant) {
+    if (!instant) {
+      animating = true;
+      manageControls();
+      $slider.addClass("animating");
+      $slider.css("top");
+      $(".slide").removeClass("active");
+      $(".slide-"+curSlide).addClass("active");
+      setTimeout(function() {
+        $slider.removeClass("animating");
+        animating = false;
+      }, animTime);
+    }
+    window.clearTimeout(autoSlideTimeout);
+    $(".slider-pagi__elem").removeClass("active");
+    $(".slider-pagi__elem-"+curSlide).addClass("active");
+    $slider.css("transform", "translate3d("+ -curSlide*100 +"%,0,0)");
+    $slideBGs.css("transform", "translate3d("+ curSlide*50 +"%,0,0)");
+    diff = 0;
+    autoSlide();
+  }
+
+  function navigateLeft() {
+    if (animating) return;
+    if (curSlide > 0) curSlide--;
+    changeSlides();
+  }
+
+  function navigateRight() {
+    if (animating) return;
+    if (curSlide < numOfSlides) curSlide++;
+    changeSlides();
+  }
+
+  $(document).on("mousedown touchstart", ".slider", function(e) {
+    if (animating) return;
+    window.clearTimeout(autoSlideTimeout);
+    var startX = e.pageX || e.originalEvent.touches[0].pageX,
+        winW = $(window).width();
+    diff = 0;
+
+    $(document).on("mousemove touchmove", function(e) {
+      var x = e.pageX || e.originalEvent.touches[0].pageX;
+      diff = (startX - x) / winW * 70;
+      if ((!curSlide && diff < 0) || (curSlide === numOfSlides && diff > 0)) diff /= 2;
+      $slider.css("transform", "translate3d("+ (-curSlide*100 - diff) +"%,0,0)");
+      $slideBGs.css("transform", "translate3d("+ (curSlide*50 + diff/2) +"%,0,0)");
+    });
   });
-  $(this).remove();
-});
 
-$(window).on('resize', function (){
-  $wHeight = $(window).height();
-  $item.height($wHeight);
-});
-
-$('.carousel').carousel({
-  interval: 6000,
-  pause: "false"
-});
-
-$(document).ready(function () {
-  $(".gallery-img").click(function(){
-    var t = $(this).attr("src");
-    $(".modal-body").html("<img src='"+t+"' class='modal-img'>");
-    $("#myModal").modal();
+  $(document).on("mouseup touchend", function(e) {
+    $(document).off("mousemove touchmove");
+    if (animating) return;
+    if (!diff) {
+      changeSlides(true);
+      return;
+    }
+    if (diff > -8 && diff < 8) {
+      changeSlides();
+      return;
+    }
+    if (diff <= -8) {
+      navigateLeft();
+    }
+    if (diff >= 8) {
+      navigateRight();
+    }
   });
-}); 
 
-$(document).ready(function(){
-  
-  // Lift card and show stats on Mouseover
-  $('#product-card').hover(function(){
-      $(this).addClass('animate');
-      $('div.carouselNext, div.carouselPrev').addClass('visible');      
-     }, function(){
-      $(this).removeClass('animate');     
-      $('div.carouselNext, div.carouselPrev').removeClass('visible');
-  }); 
-  
-  // Flip card to the back side
-  $('#view_details').click(function(){    
-    $('div.carouselNext, div.carouselPrev').removeClass('visible');
-    $('#product-card').addClass('flip-10');
-    setTimeout(function(){
-      $('#product-card').removeClass('flip-10').addClass('flip90').find('div.shadow').show().fadeTo( 80 , 1, function(){
-        $('#product-front, #product-front div.shadow').hide();      
-      });
-    }, 50);
-    
-    setTimeout(function(){
-      $('#product-card').removeClass('flip90').addClass('flip190');
-      $('#product-back').show().find('div.shadow').show().fadeTo( 90 , 0);
-      setTimeout(function(){        
-        $('#product-card').removeClass('flip190').addClass('flip180').find('div.shadow').hide();            
-        setTimeout(function(){
-          $('#product-card').css('transition', '100ms ease-out');     
-          $('#cx, #cy').addClass('s1');
-          setTimeout(function(){$('#cx, #cy').addClass('s2');}, 100);
-          setTimeout(function(){$('#cx, #cy').addClass('s3');}, 200);       
-          $('div.carouselNext, div.carouselPrev').addClass('visible');        
-        }, 100);
-      }, 100);      
-    }, 150);      
-  });     
-  
-  // Flip card back to the front side
-  $('#flip-back').click(function(){   
-    
-    $('#product-card').removeClass('flip180').addClass('flip190');
-    setTimeout(function(){
-      $('#product-card').removeClass('flip190').addClass('flip90');
-  
-      $('#product-back div.shadow').css('opacity', 0).fadeTo( 100 , 1, function(){
-        $('#product-back, #product-back div.shadow').hide();
-        $('#product-front, #product-front div.shadow').show();
-      });
-    }, 50);
-    
-    setTimeout(function(){
-      $('#product-card').removeClass('flip90').addClass('flip-10');
-      $('#product-front div.shadow').show().fadeTo( 100 , 0);
-      setTimeout(function(){            
-        $('#product-front div.shadow').hide();
-        $('#product-card').removeClass('flip-10').css('transition', '100ms ease-out');    
-        $('#cx, #cy').removeClass('s1 s2 s3');      
-      }, 100);      
-    }, 150);      
-    
-  }); 
-
-  
-  /* ----  Image Gallery Carousel   ---- */
-  
-  var carousel = $('#carousel ul');
-  var carouselSlideWidth = 335;
-  var carouselWidth = 0;  
-  var isAnimating = false;
-  
-  // building the width of the casousel
-  $('#carousel li').each(function(){
-    carouselWidth += carouselSlideWidth;
+  $(document).on("click", ".slider-control", function() {
+    if ($(this).hasClass("left")) {
+      navigateLeft();
+    } else {
+      navigateRight();
+    }
   });
-  $(carousel).css('width', carouselWidth);
-  
-  // Load Next Image
-  $('div.carouselNext').on('click', function(){
-    var currentLeft = Math.abs(parseInt($(carousel).css("left")));
-    var newLeft = currentLeft + carouselSlideWidth;
-    if(newLeft == carouselWidth || isAnimating === true){return;}
-    $('#carousel ul').css({'left': "-" + newLeft + "px",
-                 "transition": "300ms ease-out"
-               });
-    isAnimating = true;
-    setTimeout(function(){isAnimating = false;}, 300);      
+
+  $(document).on("click", ".slider-pagi__elem", function() {
+    curSlide = $(this).data("page");
+    changeSlides();
   });
-  
-  // Load Previous Image
-  $('div.carouselPrev').on('click', function(){
-    var currentLeft = Math.abs(parseInt($(carousel).css("left")));
-    var newLeft = currentLeft - carouselSlideWidth;
-    if(newLeft < 0  || isAnimating === true){return;}
-    $('#carousel ul').css({'left': "-" + newLeft + "px",
-                 "transition": "300ms ease-out"
-               });
-      isAnimating = true;
-    setTimeout(function(){isAnimating = false;}, 300);      
-  });
+
 });
-
-
-
-
-
-
-$(document).ready(function(){
-// invoke the carousel
-    $('#myCarousel').carousel({
-      interval:6000
-    });
-
-// scroll slides on mouse scroll 
-$('#myCarousel').bind('mousewheel DOMMouseScroll', function(e){
-
-        if(e.originalEvent.wheelDelta > 0 || e.originalEvent.detail < 0) {
-            $(this).carousel('prev');
-      
-      
-        }
-        else{
-            $(this).carousel('next');
-      
-        }
-    });
-
-//scroll slides on swipe for touch enabled devices 
-
-  $("#myCarousel").on("touchstart", function(event){
- 
-        var yClick = event.originalEvent.touches[0].pageY;
-      $(this).one("touchmove", function(event){
-
-        var yMove = event.originalEvent.touches[0].pageY;
-        if( Math.floor(yClick - yMove) > 1 ){
-            $(".carousel").carousel('next');
-        }
-        else if( Math.floor(yClick - yMove) < -1 ){
-            $(".carousel").carousel('prev');
-        }
-    });
-    $(".carousel").on("touchend", function(){
-            $(this).off("touchmove");
-    });
-});
-    
-});
-//animated  carousel start
-$(document).ready(function(){
-
-//to add  start animation on load for first slide 
-$(function(){
-    $.fn.extend({
-      animateCss: function (animationName) {
-        var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
-        this.addClass('animated ' + animationName).one(animationEnd, function() {
-          $(this).removeClass(animationName);
-        });
-      }
-    });
-       $('.item1.active img').animateCss('slideInDown');
-       $('.item1.active h2').animateCss('zoomIn');
-       $('.item1.active p').animateCss('fadeIn');
-       
-});
-  
-//to start animation on  mousescroll , click and swipe
-
-
- 
-     $("#myCarousel").on('slide.bs.carousel', function () {
-    $.fn.extend({
-      animateCss: function (animationName) {
-        var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
-        this.addClass('animated ' + animationName).one(animationEnd, function() {
-          $(this).removeClass(animationName);
-        });
-      }
-    });
-  
-// add animation type  from animate.css on the element which you want to animate
-
-    $('.item1 img').animateCss('slideInDown');
-    $('.item1 h2').animateCss('zoomIn');
-    $('.item1 p').animateCss('fadeIn');
-    
-    $('.item2 img').animateCss('zoomIn');
-    $('.item2 h2').animateCss('swing');
-    $('.item2 p').animateCss('fadeIn');
-    
-    $('.item3 img').animateCss('fadeInLeft');
-    $('.item3 h2').animateCss('fadeInDown');
-    $('.item3 p').animateCss('fadeIn');
-    });
-});
-
-
-
-
-
-
-
-
-

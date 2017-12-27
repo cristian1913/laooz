@@ -584,6 +584,7 @@ width: 640px;
   background-image: url('../imagenes/cover.jpg');
   background-size: cover;
   background-attachment: fixed;
+  border-top: 4px solid rgb(7, 70, 19);
 }
 
 .contenedorbos {
@@ -631,7 +632,7 @@ text-align: center;
 }
 
 .contenedorbos .botonbos:hover {
-  background: none;
+  background: rgba(10, 88, 32, 0.61);
   transition: 0.5s;
   color: #fff;
   box-shadow: none;
@@ -643,6 +644,7 @@ text-align: center;
 .productos {
   width: 100%;
   overflow: hidden;
+  border-bottom: 1px solid rgb(232, 232, 232);
 }
 
 .productos h2 {
@@ -668,7 +670,7 @@ figure.snip1256 {
   position: relative;
   float: left;
   overflow: hidden;
-  margin: 50px 1%;
+  margin: 50px 0px 50px 27px;
   min-width: 220px;
   max-width: 330px;
   max-height: 240px;
@@ -753,3 +755,85 @@ figure.snip1256.hover figcaption {
 }
 
 /**Fin Contenedor Productos**/
+
+
+.videoyou {
+  width: 100%;
+  overflow: hidden;
+  padding: 50px 0px;
+}
+
+.contenedorvid {
+  width: 80%;
+  margin:auto;
+}
+
+.contenidovid {
+  width: 50%;
+  float: left;
+}
+
+.contenidovid img {
+  padding: 0px 0px 0px 100px;
+}
+
+.contenidovid h2 {
+  font-size: 40px;
+  font-weight: 300;
+  font-family: 'Oswald', sans-serif;
+  padding: 0px 0px 0px 50px;
+}
+
+.contenidovid p {
+  width: 80%;
+  font-size: 20px;
+  font-weight: 300;
+  font-family: 'Roboto', sans-serif;
+  padding: 20px 0px 0px 50px;
+}
+
+/**fin contenedor videoyou**/
+
+.footer {
+  width: 100%;
+  overflow: hidden;
+  padding: 0px 0px 0px 0px;
+  border-top: 3px solid #0c5525;
+}
+
+.contenedorfoo {
+  width: 80%;
+  margin:auto;
+
+}
+
+.contentfooter {
+  width: 25%;
+  float: left;
+  border-right: 1px solid rgb(223, 223, 223);
+  height: 250px;
+  padding: 50px 0px 0px 30px;
+}
+
+.contentfooter:last-child {
+  border-right: none;
+
+}
+
+.contentfooter img {
+  padding: 0px 0px 0px 50px;
+}
+
+.contentfooter h3 a {
+  font-size: 30px;
+  font-weight: 200;
+  font-family: 'Oswald', sans-serif;
+  padding: 10px 0px 0px 20px;
+  color: #000;
+}
+
+.contentfooter span {
+  font-size: 40px;
+  color: #000;
+  padding: 50px 0px 0px 15px;
+}

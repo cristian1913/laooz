@@ -121,3 +121,14 @@ $(document).ready(function() {
   });
 
 });
+
+
+ /**Fin Slider Header**/
+
+
+ /* Demo purposes only */
+ $(".hover").mouseleave(
+   function () {
+     $(this).removeClass("hover");
+   }
+ );
